@@ -19,7 +19,7 @@ public class Zadatak_02_09_08 {
 	
 	public static void main(String[] args) {
 		
-		final double  radiusE = 6371.01; // radius zemlje
+		final double  RADIUS = 6371.01; // radius zemlje
 		
 		System.out.println("Unesite koordinate prve tacke: ");	//unos podataka u stepenima i provjera tipa
 		double x1 = inputCheckD();
@@ -29,7 +29,7 @@ public class Zadatak_02_09_08 {
 		double y2 = inputCheckD();
 		input.close();
 		//izrucunavanje udaljenosti po formuli (pretvoriti stepene u radijane
-		double GCDistance = radiusE * Math.acos(Math.sin(Math.toRadians(x1)) * Math.sin(Math.toRadians(x2)) + Math.cos(Math.toRadians(x1)) * Math.cos(Math.toRadians(x2)) * Math.cos(Math.toRadians(y1 - y2)));
+		double GCDistance = RADIUS * Math.acos(Math.sin(Math.toRadians(x1)) * Math.sin(Math.toRadians(x2)) + Math.cos(Math.toRadians(x1)) * Math.cos(Math.toRadians(x2)) * Math.cos(Math.toRadians(y1 - y2)));
 		System.out.println("Udaljenost izmedju dvije taceke je "+GCDistance+" km.");
 	}
 	//metoda za provjeru unesenih podataka
