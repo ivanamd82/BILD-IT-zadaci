@@ -40,6 +40,7 @@ public class Zadatak_03_04_08 {
 			num3= temporary;
 		}
 		if (num2 > num3) {			//ostalo je uporediti i druga dva broja
+			temporary = num2;
 			num2= num3;				//ako je num2 veci zamjeniti mjeste
 			num3= temporary;
 		}
