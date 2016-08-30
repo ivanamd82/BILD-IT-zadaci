@@ -21,7 +21,7 @@ public class Zadatak_04_24_08 {
 		//petlja od 2 do 100
 		for(int i = 2; i <= 100; i++){
 			if(isPrime(i)) {												//ako je broj p primaran 
-				if(isPrime(getMersenne(i).intValue()))						//provjeriti da li je i Mersenne primaran
+				if(Zadatak_03_24_08.isPrimeBig(getMersenne(i)))						//provjeriti da li je i Mersenne primaran
 					System.out.printf("%-10d%-10s\n", i, getMersenne(i));	//ako jeste ispisati ga							
 			}
 		}
