@@ -13,6 +13,7 @@ public class Zadatak_03_29_08 {
 
 	public static void main(String[] args) {
 		
+		//kreiranje scannera i pocetne vrijednosti za promjenljive num1 i num2
 		Scanner input = new Scanner(System.in);
 		System.out.println("Unesite dva cijela broja: ");
 		int num1 = 0;
@@ -30,6 +31,7 @@ public class Zadatak_03_29_08 {
 			}
 		} while(check);
 		input.close();
+		//ispis
 		System.out.printf("Suma brojava %d + %d = %d ",num1,num2,num1+num2);
 			
 	}
