@@ -26,37 +26,52 @@ public class Zadatak_03_01_09 {
 
 	public static void main(String[] args) {
 		
+		//kreiranje imena liste iz koje ce se citati, lista pozudjena od dejana za test :)
 		String fileS = "babyNames";
 		System.out.println("Enter the year: ");
 		int year = inputCheckI();
-		fileS += year+".txt"; 
+		fileS += year+".txt";  //dobijen fajl za citanje
 		
 		try {
+			//kreiranje objekta
 			File file = new File(fileS);
+			//unos pola djeteta
 			System.out.println("Enter the gender (M / F): ");
+			//prebaceno u velika slova
 			char gender = Character.toUpperCase(input.next().charAt(0));
+			//ime djeteta
 			System.out.println("Enter the name: ");
 			String name = input.next();
+			//kreiranje objekta
 			Scanner inputF = new Scanner(file);
+			//kontrolna promjenljiva
 			boolean control = false;
+			//citati do kraja dokumenta, petlja
 			while (inputF.hasNext()) {
+				//ucitava cijelu liniju teksta
 				String s = inputF.nextLine();
+				//podjeli u niz
 	            String[] array = s.split(" ");
+	            //pretraga, ako je pol M i element na indexu 1 odgovara unesenom imenu ispisi rank(elem index 0)
+	            //kontrolna promjenljiva rtu, izlazak iz petlej
 	            if (gender == 'M' && array[1].equals(name)) {
 	            	System.out.println(name+" is ranked #"+array[0]+" in year "+year);
 	            	control = true;
 					break;
 	            }
+	            //kao i za M pol, analogno tome i za F
 	            if (gender == 'F' && array[3].equals(name)) {
 	            	System.out.println(name+" is ranked #"+array[0]+" in year "+year);
 	            	control = true;
 					break;
 	            }
 	      	}
+			//ako je kontrolna false, nije pronadjeno ime
 			 if (!control)
 					System.out.println("The name "+name+" is not ranked in year "+year);
 			inputF.close();
 		}
+		///u slucaju gresaka
 		catch (FileNotFoundException ex) {
 			System.out.println("greska");
 			ex.printStackTrace();
@@ -67,6 +82,7 @@ public class Zadatak_03_01_09 {
 			ex.printStackTrace();
 		}
 	}
+	//provjera unesene godine
 public static int inputCheckI() {
 		
 		int unos = 0;	// pocetna vrijednost
