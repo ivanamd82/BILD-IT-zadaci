@@ -11,9 +11,9 @@ import java.util.Scanner;
  * total and average. Scores are separated by blanks.
  */
 
-public class Zadatak_04_31_08 {
+public class Zadatak_04_31_08{
 
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		
 		//adresa fajla
 		String address = "http://cs.armstrong.edu/liang/data/Scores.txt";
@@ -22,25 +22,25 @@ public class Zadatak_04_31_08 {
 		int counter = 0;
 		double average = 0;
 		
-		try {
+		try{
 			//kreiranje objekta
 			URL url = new URL(address);
 			Scanner input = new Scanner(url.openStream());
 			//ucitavanje iz fajla i dodavanje brojeva sumi, inkrementirati brojac
-			while (input.hasNext()) {
+			while (input.hasNext()){
 				sum += input.nextDouble();
 				counter++;
 			}
 			input.close();
 		}//u slucaju greski
-		catch (MalformedURLException ex) {
+		catch (MalformedURLException ex){
 			System.out.println("Pogresan url");
 		}
-		catch (IOException ex) {
+		catch (IOException ex){
 			System.out.println("I/O Errors: no such file");
 		}
 		//ako je brojac veci od 0, ispise sumu i prosjek, inace javi poruku
-		if (counter > 0) {
+		if (counter > 0){
 			average = sum / counter;
 			System.out.println("\nSuma svih brojeva: " +sum + "\nProsjek: " + average);
 		}
