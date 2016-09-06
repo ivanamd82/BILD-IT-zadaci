@@ -10,15 +10,41 @@ public class Rational extends Number implements Comparable<Rational>{
 	}
 	//Construct a rational with specified numerator and denominator
 	public Rational(long numerator, long denominator) {
-		r[0] = numerator;
-		r[1] = denominator;
+		long gcd = gcd(numerator, denominator);
+		r[1] = Math.abs(denominator)/gcd;
+		if (denominator >= 0) {
+			r[0]= numerator/gcd;
+		}
+		//ako je negativan, brojnik mjenja znak iz + u -, i obrnuto
+		else r[0] = -1 * numerator / gcd;		
 	}
+	//Construct a rational with String
+	public Rational(String number) {
+		//prvo pojavljivanje znaka /
+		int index = number.indexOf('/');
+		//brojilac je dio stringa do indeksa
+		long numerator = Integer.parseInt(number.substring(0, index));
+		//nazivnik je dio stringa posle indeksa
+		long denominator = Integer.parseInt(number.substring(index + 1, number.length()));
+		//nadjemo najmanji zajednicki djelilac, da bi mogli "skratiti" brojeve
+		long gcd = gcd(numerator, denominator);
+		//nazivnik
+		r[1] = Math.abs(denominator)/gcd;
+		//ako je nazivnik veci od nule
+		if (denominator >= 0) {
+			//brojnik je jednak unesenom broju podjeljenom sa gcd
+			r[0]= numerator/gcd;
+		}
+		//ako je negativan, brojnik mjenja znak iz + u -, i obrnuto i djeli se sa gcd
+		else r[0] = -1 * numerator / gcd;
+	}
+
 	//Find GCD of two numbers
 	private static long gcd(long n, long d) {
+		//uzimamo apsolutne vrijednosti
 		long n1 = Math.abs(n);
 		long n2 = Math.abs(d);
 		int gcd = 1;
-
 		for (int k = 1; k <= n1 && k <= n2; k++) {
 			if (n1 % k == 0 && n2 % k == 0) {
 				gcd = k;
