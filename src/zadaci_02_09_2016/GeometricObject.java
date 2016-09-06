@@ -39,6 +39,10 @@ public abstract class GeometricObject implements Comparable<GeometricObject> {
 	public Date getDateCreated() {
 		return dateCreated;
 	}
+	
+	public void setDateCreated(Date dateCreated) {
+		this.dateCreated = dateCreated;
+	}
 	//Return a string representation of this object 
     @Override
     public String toString() {
