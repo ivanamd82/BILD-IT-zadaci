@@ -24,21 +24,26 @@ public class Zadatak_01_06_09 {
 
 	public static void main(String[] args) {
 		
+		//unos podataka
 		Scanner input = new Scanner(System.in);
 		System.out.println("Unesite index: ");
 		int index = input.nextInt();
+		//ispis
 		System.out.println("Fibonacijev broj na "+index+" indeksu je "+fib(index));
 		input.close();
 	}
-	
+	//izracunava fibonacijev broj na odredjenom indeksu
 	public static long fib(long index) {
-	
+		//ako je index 0
 		if (index == 0) {
 			return 0;
 		}
+		//fib br na indeksu 1 je 1 
 		else if (index == 1) {
 			return 1;
 		}
+		//fib broj na odredjenom indexu je jednak zbiru predhodna dva fib broja
+		//poziva metoda samu sebe
 		else {
 			return fib(index - 1) + fib(index - 2);
 		}
