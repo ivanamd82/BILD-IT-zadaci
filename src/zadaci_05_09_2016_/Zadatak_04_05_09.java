@@ -2,8 +2,8 @@ package zadaci_05_09_2016_;
 
 import java.util.Scanner;
 
-/*
- * *13.17 (Math: The Complex class) A complex number is a number in the form a + bi,
+/* 13.17
+ * (Math: The Complex class) A complex number is a number in the form a + bi,
 where a and b are real numbers and i is 2-1. The numbers a and b are known
 as the real part and imaginary part of the complex number, respectively. You can
 perform addition, subtraction, multiplication, and division for complex numbers
