@@ -1,4 +1,4 @@
-package zadaci_05_09_2016;
+package zadaci_05_09_2016_;
 /*
  * uzeti u obzir samo pozitivni racionalni brojevi napisani u formi n/d
  * za sve ostale argumente javlja gresku

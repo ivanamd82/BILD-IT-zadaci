@@ -1,4 +1,4 @@
-package zadaci_05_09_2016;
+package zadaci_05_09_2016_;
 
 public class Rational extends Number implements Comparable<Rational>{
 

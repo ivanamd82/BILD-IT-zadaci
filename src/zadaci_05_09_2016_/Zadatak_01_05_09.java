@@ -1,4 +1,4 @@
-package zadaci_05_09_2016;
+package zadaci_05_09_2016_;
 
 /* 13.14
  * (Demonstrate the benefits of encapsulation) Rewrite the Rational class in
