@@ -8,7 +8,7 @@ Write a recursive method to find the GCD. Write a test program that prompts the
 user to enter two integers and displays their GCD.
  */
 
-public class Zadatak_02_05_09 {
+public class Zadatak_02_06_09 {
 
 	public static void main(String[] args) {
 		

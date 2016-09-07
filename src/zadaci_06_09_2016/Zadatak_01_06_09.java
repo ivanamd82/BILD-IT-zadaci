@@ -20,7 +20,7 @@ Write a test program that prompts the user to enter an index and displays its
 Fibonacci number.
  */
 
-public class Zadatak_01_05_09 {
+public class Zadatak_01_06_09 {
 
 	public static void main(String[] args) {
 		
