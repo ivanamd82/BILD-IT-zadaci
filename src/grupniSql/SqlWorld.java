@@ -52,19 +52,27 @@ public class SqlWorld {
 				query = "SELECT * FROM country JOIN city ON country.Capital=city.ID WHERE country.Name = '" + s + "';";
 				//izvrsavanje izjave
 				ResultSet result = statement.executeQuery(query);
-				//ispis
-				System.out.println("Name\tContinent\tRegion\tSurface Area\tPopulation: ");
+				//ispis				
 				while(result.next()) {
-					System.out.println(result.getString("Name")+"\t"+result.getString("Continent")+"\t"
-							+result.getString("Region")+"\t"+result.getString("SurfaceArea")+"\t"
-							+result.getString("Population")+"\t"+result.getString("city.Name"));
+					System.out.print("Ime drzave: ");
+					System.out.println(result.getString("country.Name"));
+					System.out.print("Kontinent: ");
+					System.out.println(result.getString("country.Continent"));
+					System.out.print("Regija: ");
+					System.out.println(result.getString("country.Region"));
+					System.out.print("Povrsina: ");
+					System.out.println(result.getString("SurfaceArea"));
+					System.out.print("Broj stanovnika: ");
+					System.out.println(result.getString("Population"));
+					System.out.print("Glavni grad: ");
+					System.out.println(result.getString("city.Name"));
 				}
 				//pretraga jezika za tu drzavu
 				query = "SELECT * FROM countryLanguage JOIN country ON country.Code=countryLanguage.CountryCode WHERE country.Name='"+s+"';";
 				ResultSet result1= statement.executeQuery(query);
-				System.out.println("Jezici");
+				System.out.println("Jezici: ");
 				while(result1.next()) {
-					System.out.println(result1.getString("Language"));
+					System.out.println("\t"+result1.getString("Language"));
 				}
 				break;
 			}
@@ -74,10 +82,15 @@ public class SqlWorld {
 				//povezane tabele preko coda drzave
 				query = "SELECT * FROM city JOIN country ON city.CountryCode=country.Code WHERE city.Name = '" + s + "';";
 				ResultSet result = statement.executeQuery(query);
-				System.out.println("Ime\tDrzava\tDistrikt\tPopulacija: ");
-				while(result.next()) {					
-					System.out.println(result.getString("Name")+"\t"+result.getString("country.Name")+"\t"
-							+result.getString("District")+"\t"+result.getString("Population"));
+				while(result.next()) {	
+					System.out.print("Ime grada: ");
+					System.out.println(result.getString("city.Name"));
+					System.out.print("Drzava: ");
+					System.out.println(result.getString("country.Name"));
+					System.out.println("Distrikt");
+					System.out.println(result.getString("District"));
+					System.out.println("Broj stanovnika: ");
+					System.out.println(result.getString("Population"));					
 				}
 				break;
 			}
